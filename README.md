@@ -1,39 +1,49 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# updown_arrow_scroller for Flutter Web
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Flutter web package that enables keyboard up-down arrow navigation for scrolling through pages.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Overview
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This Flutter web package provides a simple solution for users to navigate through pages using keyboard arrow keys. It enhances the user experience by allowing them to scroll through your web pages using the up and down arrow keys.
 
-## Features
+While using Flutter Web in Desktop or Laptop, you can not scroll using keyboard up and down keys, So I have developed this package **updown_arrow_scroller**.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add the following dependency to your `pubspec.yaml` file:
 
-## Usage
+```yaml
+dependencies:
+  updown_arrow_scroller: <latest_version>
+```
+now import pluin in dart file.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 ```dart
-const like = 'sample';
+import 'package:updown_arrow_scroller/updown_arrow_scroller.dart';
 ```
+And use with same ScrollController given to its child Widget as shown in **example**.
 
-## Additional information
+```dart
+final ScrollController _controller = ScrollController();
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+return UpDownArrowScroller(
+            childScrollController: _controller,
+            child: ListView.separated(
+              controller: _controller,
+              itemCount: cities.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(cities[index].city),
+                  onTap: () async {},
+                );
+              },
+              separatorBuilder: (context, index) {
+                return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 1),
+                    child: const Divider());
+              },
+            ),
+          );
+```
