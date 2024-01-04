@@ -174,7 +174,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   vector_math:
     dependency: transitive
     description:
@@ -193,4 +193,4 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.3 <4.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=1.20.0"
