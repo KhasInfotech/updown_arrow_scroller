@@ -1,7 +1,6 @@
 library updown_arrow_scroller;
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class UpDownArrowScroller extends StatefulWidget {
@@ -21,16 +20,13 @@ class _UpDownArrowScrollerState extends State<UpDownArrowScroller> {
   void _handleKeyEvent(RawKeyEvent event) {
     var offset = widget.childScrollController.offset;
     if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+      // If Keyboard up arrow is pressed
       setState(() {
-        if (kReleaseMode) {
-          widget.childScrollController.animateTo(offset - 100,
-              duration: const Duration(milliseconds: 30), curve: Curves.ease);
-        } else {
-          widget.childScrollController.animateTo(offset - 100,
-              duration: const Duration(milliseconds: 30), curve: Curves.ease);
-        }
+        widget.childScrollController.animateTo(offset - 100,
+            duration: const Duration(milliseconds: 30), curve: Curves.ease);
       });
     } else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+      // If Keyboard down arrow is pressed
       setState(() {
         widget.childScrollController.animateTo(offset + 100,
             duration: const Duration(milliseconds: 30), curve: Curves.ease);
@@ -51,7 +47,6 @@ class _UpDownArrowScrollerState extends State<UpDownArrowScroller> {
       onKey: _handleKeyEvent,
       autofocus: true,
       child: widget.child,
-    );
+    ); // RawKeyboardListener used for getting event
   }
 }
-
