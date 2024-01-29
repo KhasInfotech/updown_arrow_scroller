@@ -6,11 +6,11 @@ import 'package:flutter/services.dart';
 // Class used for scroll child widget on pres of up and down arrow key of Keyboard
 class UpDownArrowScroller extends StatefulWidget {
   const UpDownArrowScroller(
-      {super.key, required this.child, required this.childScrollController})
-      : super(key: key);
+      {super.key, required this.child, required this.childScrollController});
+
   final Widget child; //Child List Widget
-  final ScrollController 
-    childScrollController; //Same Scroll Controller of Child Widget
+  final ScrollController
+      childScrollController; //Same Scroll Controller of Child Widget
 
   @override
   State<UpDownArrowScroller> createState() => _UpDownArrowScrollerState();
