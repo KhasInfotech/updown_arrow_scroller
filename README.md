@@ -2,6 +2,8 @@
 
 A Flutter web package that enables keyboard up-down arrow navigation for scrolling through pages.
 
+<a href="https://www.buymeacoffee.com/khasinfote2" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Overview
 
 This Flutter web package provides a simple solution for users to navigate through pages using keyboard arrow keys. It enhances the user experience by allowing them to scroll through your web pages using the up and down arrow keys.
